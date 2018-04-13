@@ -1,0 +1,19 @@
+<h1>Listing cars</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Created At</th>
+    <th></th>
+  </tr>
+ 
+  <% @cars.each do |car| %>
+    <tr>
+      <td><%= car.title %></td>
+      <td><%= car.description %></td>
+      <td><%= car.created_at %></td>
+      <td><%= link_to 'Show', car_path(car) %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'New car', new_car_path %>
